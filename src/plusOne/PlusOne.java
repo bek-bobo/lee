@@ -5,29 +5,22 @@ import java.util.Arrays;
 public class PlusOne {
     public static void main(String[] args) {
 
-        int[] digits = {9,9,8};
-        int digitsLen = digits.length;
+        int[] digits = {9, 9, 8};
 
-
-        if(digits[digitsLen-1] == 9){
-            int[] arr = new int[digits.length+1];
-
-            for(int i = 0; i < digits.length; i++){
-                if(i == digitsLen-1){
-                    arr[i] = 1;
-                }else{
-                    arr[i] = digits[i];
-                }
+        for (int i = digits.length - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
+                System.out.println(Arrays.toString(digits));
+                return;
+            }else{
+                digits[i] = 0;
             }
-
-            arr[digitsLen] = 0;
-
-            System.out.println(Arrays.toString(arr));
-
-        }else {
-            digits[digitsLen-1] +=1;
-            System.out.println(Arrays.toString(digits));
         }
+
+        // Agar hammasi 9 bo‘lsa (999 → 1000)
+        int[] result = new int[digits.length + 1];
+        result[0] = 1;
+        System.out.println(Arrays.toString(result));
 
     }
 }
