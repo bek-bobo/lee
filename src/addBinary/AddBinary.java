@@ -17,6 +17,6 @@ public class AddBinary {
             sb.append(sum % 2);
             carry = sum / 2;
         }
-        System.out.println(sb.reverse().toString());
+        System.out.println(sb.reverse());
     }
 }
